@@ -1,6 +1,8 @@
 #ifndef HEADER_FILE
 #define HEADER_FILE
 
+#include <stdio.h>
+
 /**
  * struct listint_s - Doubly linked list node
  *
@@ -18,5 +20,11 @@ typedef struct listint_s
 void print_list(const listint_t *list);
 
 void print_array(const int *array, size_t size);
+
+void swap(int first_index, int second_index, int *array);
+
+int compare(int first, int second);
+
+void bubble_sort(int *array, size_t size);
 
 #endif
