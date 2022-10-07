@@ -2,8 +2,8 @@
 
 /**
  * bubble_sort - sorts the array with bubble sort
- * array: the array to sort
- * size: the size of the array
+ * @array: the array to sort
+ * @size: the size of the array
  * Return: void
  */
 void bubble_sort(int *array, size_t size)
@@ -11,6 +11,8 @@ void bubble_sort(int *array, size_t size)
 	int swaps = 1, compares = 0;
 	size_t i;
 
+	if (size < 2)
+		return;
 	while (swaps)
 	{
 		swaps = 0;

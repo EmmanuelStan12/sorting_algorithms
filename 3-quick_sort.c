@@ -2,10 +2,10 @@
 
 /**
  * sort - quick sort
- * @array: the array
+ * @arr: the array
  * @size: the size
- * @from: the from index
- * @to: the to index
+ * @low_index: the from index
+ * @high_index: the to index
  * Return: the result array
  */
 void sort(int *arr, int low_index, int high_index, size_t size)
