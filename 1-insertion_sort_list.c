@@ -38,7 +38,7 @@ void insertion_sort_list(listint_t **list)
 	if (!list)
 		return;
 	current = *list;
-	if (!current)
+	if (!current || !current->next)
 		return;
 	while (current)
 	{
