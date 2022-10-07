@@ -2,9 +2,9 @@
 
 /**
  * swap - swaps two digits in an array
- * first_index: the first index
- * second_index: the second index
- * array: the array
+ * @first_index: the first index
+ * @second_index: the second index
+ * @array: the array
  * Return: void
  */
 void swap(int first_index, int second_index, int *array)
@@ -14,23 +14,6 @@ void swap(int first_index, int second_index, int *array)
 	temp = array[first_index];
 	array[first_index] = array[second_index];
 	array[second_index] = temp;
-}
-
-/**
- * compare: compares two digits
- * first: the first number
- * second: the second number
- * Return: 0 if equal, -1 if less, and 1 if greater
- */
-int compare(int first, int second)
-{
-	if (first == second)
-		return (0);
-	else if (first > second)
-		return (1);
-	else if (first < second)
-		return (-1);
-	return (-1);
 }
 
 /**
@@ -50,7 +33,7 @@ void sort(int *arr, int low_index, int high_index, size_t size)
 		return;
 	for (; i < high_index; i++)
 	{
-		if (arr[i] <= pivot)
+		if (arr[i] < pivot)
 		{
 			if (i == j)
 			{
@@ -62,8 +45,11 @@ void sort(int *arr, int low_index, int high_index, size_t size)
 			j++;
 		}
 	}
-	swap(j, high_index, arr);
-	print_array(arr, size);
+	if (j != high_index)
+	{
+		swap(j, high_index, arr);
+		print_array(arr, size);
+	}
 	sort(arr, low_index, j - 1, size);
 	sort(arr, j + 1, high_index, size);
 }
@@ -76,7 +62,7 @@ void sort(int *arr, int low_index, int high_index, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	if (size < 2)
+	if (!array || size < 2)
 		return;
 	sort(array, 0, (int)size - 1, size);
 }

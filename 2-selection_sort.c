@@ -2,9 +2,9 @@
 
 /**
  * swap - swaps two digits in an array
- * first_index: the first index
- * second_index: the second index
- * array: the array
+ * @first_index: the first index
+ * @second_index: the second index
+ * @array: the array
  * Return: void
  */
 void swap(int first_index, int second_index, int *array)
@@ -17,9 +17,9 @@ void swap(int first_index, int second_index, int *array)
 }
 
 /**
- * compare: compares two digits
- * first: the first number
- * second: the second number
+ * compare - compares two digits
+ * @first: the first number
+ * @second: the second number
  * Return: 0 if equal, -1 if less, and 1 if greater
  */
 int compare(int first, int second)
