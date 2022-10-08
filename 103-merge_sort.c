@@ -96,5 +96,7 @@ void sort(int *arr, size_t low, size_t high)
  */
 void merge_sort(int *array, size_t size)
 {
+	if (!array || size < 2)
+		return;
 	sort(array, 0, size - 1);
 }
