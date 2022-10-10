@@ -28,13 +28,10 @@ void counting_sort(int *array, size_t size)
 	for (i = 1; i < max; i++)
 		count[i] += count[i - 1];
 	print_array(count, (size_t)max);
-	for (i = 0; i < (int) size; i++)
+	for (i = size - 1; i >= 0; i--)
 	{
-		int key = array[i];
-		int c_k = count[key - 1];
-
-		count[key] -= 1;
-		output[c_k] = array[i];
+		output[count[array[i] - 1]] = array[i];
+		count[array[i]]--;
 	}
 	for (i = 0; i < (int) size; i++)
 		array[i] = output[i];
