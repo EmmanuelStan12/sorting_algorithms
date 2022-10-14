@@ -27,7 +27,7 @@ void swap(int first_index, int second_index, int *array)
 void sort(int *arr, int low_index, int high_index, size_t size)
 {
 	int i = low_index, j = low_index;
-	int pivot = arr[high_index];
+	int swaps = 0, pivot = arr[high_index];
 
 	if (low_index >= high_index)
 		return;
@@ -41,11 +41,12 @@ void sort(int *arr, int low_index, int high_index, size_t size)
 				continue;
 			}
 			swap(i, j, arr);
+			swaps++;
 			print_array(arr, size);
 			j++;
 		}
 	}
-	if (j != high_index)
+	if (j != high_index && arr[j] != pivot)
 	{
 		swap(j, high_index, arr);
 		print_array(arr, size);
